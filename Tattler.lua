@@ -329,7 +329,7 @@ function Tattler.CHAT_MSG_ADDON(prefix,msg,channel,sender)
     for msg,data in pairs(current_tattles) do
       data.elapsed = data.elapsed + arg1
       -- in 0.2 secs check msg's, clear out everything by version, if you're first in the list then tattle
-      if data.elapsed > 0.2 then
+      if data.elapsed > 0.01 then
         local _,temp = next(data.copies)
         -- keep first entry of highest version
         for _,copy in ipairs(data.copies) do
